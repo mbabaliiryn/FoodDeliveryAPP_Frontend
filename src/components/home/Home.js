@@ -1,9 +1,12 @@
 import React from 'react';
 import Footer from '../layout/Footer';
-import Header from '../layout/Header'
+import Header from '../layout/Header';
+import { useSelector } from 'react-redux'
 
 
 function Home() {
+  // const user = useSelector(state => state.authReducer.user);
+  //   console.log(user, "test")
     return (
         <div>
          <Header></Header>
