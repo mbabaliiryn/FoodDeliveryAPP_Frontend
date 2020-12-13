@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+/* @import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "open Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --mute: #767676;
+    --cover: #f8f9fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--white);
+}
+.footer-ul {
+    list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.footer-li {
+    font-size: 14px;
+    color: var(--mute);
 }
 
-.App-link {
-  color: #61dafb;
+.footer-store {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.app-store-logo {
+    padding: 10px;
+    width: 220px;
+} */
