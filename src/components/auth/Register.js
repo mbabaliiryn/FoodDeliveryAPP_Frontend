@@ -29,9 +29,6 @@ function Register(props) {
 
     }
 
-    
-    
-
     return (
         <div>
             <Header/>
@@ -81,6 +78,7 @@ function Register(props) {
                                 }
                                  />
                             </div>
+                        
                             <div className="form-group">
                             <label htmlFor="Password">Password</label>
 

@@ -21,7 +21,7 @@ const RegisterAuthAction = (userState, history) => {
             dispatch({ type: AuthActionType.REGISTER_SUCCESS, payload: data.user });
             console.log(res, "register success")
             localStorage.setItem('user',res.data.user);
-            history.push("/");
+            history.push("/menu");
 
         } catch (error) {
             console.error(error, "register fail");
@@ -36,7 +36,7 @@ const LoginAuthAction = (loginState, history) => {
             const res = await axios.post('/authenticate', loginState);
             const { data } = res;
             dispatch({ type: AuthActionType.LOGIN_SUCCESS, payload: data.message, });
-            history.push("/");
+            history.push("/menu");
 
         } catch (error) {
             console.error(error);
@@ -51,7 +51,7 @@ const LogOutAuthAction = (history) => {
             const res = await axios.get('/logout');
             const { data } = res;
             dispatch({ type: AuthActionType.LOGOUT_SUCCESS, payload: data.message, });
-            history.push("/");
+            history.push("http://localhost:3000/users");
 
         } catch (error) {
             console.error(error);

@@ -7,13 +7,14 @@ function Header(props) {
     const user = localStorage.user;
     const { auth, logout } = props;
     const history = useHistory();
+    console.log(user,"user")
         return (
             <div className="header d-flex justify-content-center py-2 shadow-sm">
                 <Link to="/">
-                    <h5 className="font-weight-bold text-danger mx-3">Home Cooked Food</h5>
+                    <h5 className="font-weight-bold text-danger mx-3"> FoodDeliveryApp</h5>
                 </Link>
                 <div className="ml-auto d-flex">
-                    {!auth.isLoggedIn ? (
+                    {!auth.authreducer.isLoggedIn ? (
                     <React.Fragment>
                         <Link to="./login">
                         <button className="btn btn-danger btn-sm mx-2">Login</button>
@@ -24,7 +25,7 @@ function Header(props) {
                     </React.Fragment>
                     ) : (
                     <React.Fragment>
-                        <h5>{user.first_name}</h5>
+                        <h5>{user.email}</h5>
                         <button className="btn btn-danger btn-sm mx-2" onClick={() => {
                             logout(history);
                         }}>Log out</button>
