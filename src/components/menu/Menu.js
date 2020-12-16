@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import filterByIngredients from '../../redux/actions/filterByIngredients'
 
-
-
 function Menu() {
+  const history = useHistory();
   const ingredient = useSelector(state => state.ingredient);
   console.log(ingredient,"ingredients")
+
   const dispatch = useDispatch();
 
   const [input, setInput] = useState("");
@@ -21,7 +22,7 @@ function Menu() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(filterByIngredients(input));
-    
+    history.push(`/search/${input}`);
   }
   
 
@@ -36,7 +37,7 @@ function Menu() {
           <div className="form-group m-0">
             <input type="text" className="form-control search-from-control" placeholder="Your favourite food"
              onChange={handleChange}
-             value={ingredient}
+             value={input}
             />
           </div>
           <button type="submit" className="ml-2 btn btn-danger btn-sm ">Search</button>

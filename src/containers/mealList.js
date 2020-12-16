@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
 import Meal from '../components/meal';
 import fetchMeals from '../redux/actions/meals';
 import ErrorPage from '../components/errors/errorPage';
@@ -11,25 +12,17 @@ import '../styles/meal.scss';
 
 const notFound = 'No meal found';
 
-const MealList = props => {
+const MealList = () => {
   const { categoryType } = useParams();
 
-
-
-
-  const {
-    meals,
-    error,
-    loading,
-    fetchMeals,
-  } = props;
+  const mealReducer = useSelector(state => state.meals);
+  const { loading, meals, error } = mealReducer;
 
   useEffect(() => {
     if (categoryType) {
       fetchMeals(categoryType);
     }
   }, [fetchMeals, categoryType]);
-  console.log(meals,"rtr7yty")
 
   return (
     <section className="meals-section">
@@ -54,9 +47,7 @@ const MealList = props => {
 };
 
 const mapStateToProps = state => ({
-  meals: state.meals,
   error: state,
-  loading: state
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -66,18 +57,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 MealList.defaultProps = {
-  meals: [],
   error: '',
-  loading: false,
   fetchMeals: () => undefined,
 };
 
 MealList.propTypes = {
-  meals: PropTypes.arrayOf(
-    PropTypes.shape({
-      strMeal: PropTypes.string,
-    }),
-  ),
   error: PropTypes.string,
   loading: PropTypes.bool,
   fetchMeals: PropTypes.func,
