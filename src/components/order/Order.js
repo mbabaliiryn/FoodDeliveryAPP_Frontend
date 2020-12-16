@@ -3,31 +3,24 @@ import { useSelector } from 'react-redux'
 
 
 function Order() {
-    // const { handleClose } = this.props;
   // const user = useSelector(state => state.authReducer.user);
   //   console.log(user, "test")
     return (
-        <form className="modal-content animate" >
-        <div className="imgcontainer">
-          {/* <span className="close" title="Close Modal" onClick={handleClose}>&times;</span> */}
+
+        <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required/>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required/>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
         </div>
-
-        <div className="container">
-          <label htmlFor="email">
-            <b>Email</b>
-            <input type="email" placeholder="Enter Email" name="email"  required />
-          </label>
-          <label htmlFor="password">
-            <b>Password</b>
-            <input type="password" placeholder="Enter Password" name="password"  required />
-          </label>
-          <br />
-
-          <button type="submit">Login</button>
-
-        </div>
-        <div className="container" style={{ background: '#f1f1f1' }} />
-      </form>
     )
 }
 

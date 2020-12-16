@@ -49,3 +49,11 @@ h4 {
 .footer {
     margin-top: 300px;
 }
+
+/* menu */
+.menu-body {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+}

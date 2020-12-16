@@ -48,10 +48,10 @@ const LoginAuthAction = (loginState, history) => {
 const LogOutAuthAction = (history) => {
     return async (dispatch) => {
         try {
-            const res = await axios.get('/logout');
+            const res = await axios.get('http://localhost:3000/users');
             const { data } = res;
             dispatch({ type: AuthActionType.LOGOUT_SUCCESS, payload: data.message, });
-            history.push("http://localhost:3000/users");
+            history.push("/");
 
         } catch (error) {
             console.error(error);

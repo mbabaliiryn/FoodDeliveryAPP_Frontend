@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from './components/auth/Register';
 import Menu from './components/menu/Menu';
-import Order from './components/order/Order';
 import CategoryList from './containers/categoryList';
 import MealList from './containers/mealList';
 import SingleDish from './containers/singleDish';

@@ -3,7 +3,7 @@ import categoryReducer from './categories';
 import mealReducer from './meals';
 import dishReducer from './dish';
 import ingredientReducer from './ingredients';
-import modalOrder from './ModalOrder'
+
 
 const reducer = combineReducers({
   categories: categoryReducer,
